@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/opening.css') }}">
+    <link
+      rel="stylesheet"
+      href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <title>Responsive Landing Page in HTML CSS and JavaScript</title>
+    <style>
+      .la {
+        color: #F1FADA;
+      }
+      .la:hover {
+        color: #265073;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <form action="/about" method="post">
+            <input type="hidden" name="name" value="{{ name }}">
+        </form>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <img src="../static/images/im.jpg" alt="" />
+          </div>
+          <nav>
+            <div class="btn">
+              <i class="fa fa-times close-btn"></i>
+            </div>
+            <li><a href="#">Home</a></li>
+            <li><a href="/login">Login/Signup</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </nav>
+          <div class="btn">
+            <i class="fa fa-bars menu-btn"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>
+      <video autoplay muted loop>
+        <source src="../static/videos/v.mp4" type="video/mp4" />
+      </video>
+      <div class="container">
+        <div class="content">
+          <h2>"Together,</h2>
+          <h2>let's transform lives,inspire hope, and</h2>
+          <h2>unleash the power of humanity with <span class="la">RuralAid</span>.”</h2>
+          <p>
+            In an interconnected world, where empathy transcends borders, <em>RuralAid</em> stands as a beacon
+of compassion and community. Dedicated to rural development, we embody the spirit of humanity,
+offering a platform where individuals unite to uplift underprivileged regions.
+          </p>
+          <button>Explore More</button>
+          <div class="social_icons">
+            <i class="fa fa-brands fa-facebook"></i>
+            <i class="fa fa-brands fa-twitter"></i>
+            <i class="fa fa-brands fa-instagram"></i>
+            <i class="fa fa-brands fa-pinterest"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+        // Automatically submit the form when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('myForm').submit();
+        });
+    </script>
+  </body>
+</html>

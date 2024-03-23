@@ -1,0 +1,67 @@
+.tan{
+    display: flex;
+      flex-direction: column; /* Ensures items are aligned vertically */
+      align-items: center; /* Aligning items horizontally */
+   }
+  #formContainer {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 50%;
+  }
+  #formType {
+      /* padding: 5px; */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 20px; /* Adjust the margin to separate from the form container */
+  }
+  #tittle{
+    display:flex;
+    
+  }
+  .form-container {
+      margin-top: 20px;
+  }
+  
+  .form-container h2 {
+      margin-bottom: 15px;
+  }
+  
+  .form-group {
+      margin-bottom: 10px;
+  }
+  h4{
+    padding-top: 20px;
+  }
+  .form-group label {
+      display: block;
+      margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="submit"] {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+  }
+    /* Changing color of submit button to red */
+    input[type="submit"] {
+        padding: 5px 10px ; /* Adjust padding for the desired button size */
+        border: none; /* Remove border to have a cleaner appearance */
+        background-color: red;
+        color: white;
+        display: block;
+        margin: auto;
+        cursor: pointer; /* Adding cursor style for better UX */
+        width: fit-content; /* Let the button adjust its width according to content */
+
+    }
+  
+  .form-container form {  
+      display: flex;
+      flex-direction: column;
+  }

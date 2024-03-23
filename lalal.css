@@ -1,0 +1,91 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.nav{
+    /* background-color: black; */
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0%;
+    background-color: rgb(19, 19, 55);
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+}
+li{
+    margin: 0 20px;
+    list-style-type: none;
+}
+.content{
+    display: flex;
+    padding: 40px 0;
+    margin:20px;
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;
+    height: max-content;
+  }
+.quote{
+  width: fit-content;
+}
+.content h2{
+  font-size: 2.5rem;
+  /* color: #fff; */
+  font-family: "ubuntu",sans-serif;
+}
+.content p{
+  line-height: 2;
+  margin-top: 1rem;
+}
+.content button{
+      background-color: initial;
+      background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+      border-radius: 6px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+      height: 40px;
+      line-height: 40px;
+      outline: 0;
+      overflow: hidden;
+      padding: 0 20px;
+      pointer-events: auto;
+      position: relative;
+      text-align: center;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      vertical-align: top;
+      white-space: nowrap;
+      width: 20%;
+      z-index: 9;
+      border: 0;
+      transition: box-shadow .2s;
+}
+
+.content button:hover {
+    box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+.tan{
+    display: flex;
+    gap:20px;
+}
+  
+.content button:hover,i:hover{
+  background-image: linear-gradient(30deg,red,rgb(255, 89, 0),rgb(255, 170, 0));
+}
+
+.footer{
+    left: 0;
+    right:0;
+    background-color: black;
+    color: aliceblue;
+    bottom: 0;
+}

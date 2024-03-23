@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/form1.css') }}">
+<title>Dynamic Form</title>
+
+</head>
+<body>
+    <div class="tan">
+<div id="tittle">
+<h4>This fundraiser will benifit: </h4>
+<select id="formType" class onchange="changeForm()">
+  <option value="your">Myself</option>
+  <option value="friend">Friends</option>
+  <option value="relative">Relatives</option>
+  <option value="ngo">Registered NGO</option>
+  <option value="other">Others</option>
+</select>
+</div>
+<br>
+<div id="formContainer">
+
+  <div id="yourForm">
+ 
+    <form action="submit_form1" method="post" >
+     
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" min="0"><br>
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select><br>
+        <label for="place">Place:</label><br>
+        <input type="text" id="place" name="place"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+  <div id="friendForm" style="display:none;">
+ 
+    <form action="submit_form1" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" min="0"><br>
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select><br>
+        <label for="place">Place:</label><br>
+        <input type="text" id="place" name="place"><br>
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number must be in XXX-XXX-XXXX format"><br>
+        <input type="submit" value="Submit">
+      </form>
+  </div>
+  <div id="relativeForm" style="display:none;">
+
+
+<form action="submit_form1" method="post">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br>
+  <label for="relation">Relation:</label><br>
+  <input type="text" id="relation" name="relation" required><br>
+  <label for="age">Age:</label><br>
+  <input type="number" id="age" name="age" min="0" required><br>
+  <label for="place">Place:</label><br>
+  <input type="text" id="place" name="place" required><br>
+  <label for="phone">Phone Number:</label><br>
+  <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number must be in XXX-XXX-XXXX format"><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+<div id="ngoForm" style="display:none;">
+
+<form action="submit_form1" method="post">
+  <label for="ngoName">Name of Organization:</label><br>
+  <input type="text" id="ngoName" name="ngoName" required><br>
+  <label for="cause">Cause:</label><br>
+  <input type="text" id="cause" name="cause" required><br>
+  <label for="place">Place:</label><br>
+  <input type="text" id="place" name="place" required><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+<div id="otherForm" style="display:none;">
+
+    <form action="submit_form1" method="post">
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" min="0"><br>
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select><br>
+        <label for="place">Place:</label><br>
+        <input type="text" id="place" name="place"><br>
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number must be in XXX-XXX-XXXX format"><br>
+        <input type="submit" value="Submit">
+      </form>
+  </div>
+  <div id="nextForm" style="display:none;">
+    <h2>Next Form</h2>
+    <form id="nextFormSubmit" onsubmit="submitNextForm(event)">
+        <label for="newName">New Name:</label><br>
+        <input type="text" id="newName" name="newName"><br>
+        <label for="newAge">New Age:</label><br>
+        <input type="number" id="newAge" name="newAge" min="0"><br>
+        <input type="submit" value="Submit">
+      </form>
+  </div>
+</div>
+    </div>
+  
+<script>
+function changeForm() {
+  var formType = document.getElementById("formType").value;
+  var forms = document.querySelectorAll("#formContainer > div");
+  forms.forEach(form => {
+    form.style.display = "none";
+  });
+  document.getElementById(formType + "Form").style.display = "block";
+}
+</script>
+</body>
+</html>

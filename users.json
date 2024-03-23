@@ -1,0 +1,22 @@
+{
+    "users": [
+        {
+            "name": "harika",
+            "phone_number": "8247459086",
+            "email": "harikadanduprolu740@gmail.com",
+            "password": "1"
+        },
+        {
+            "name": "amulu",
+            "phone_number": "9000901790",
+            "email": "dcga@gmail.com",
+            "password": "1"
+        },
+        {
+            "name": "Tanmyee",
+            "phone_number": "9000901792",
+            "email": "vedhasrianumolu",
+            "password": "ok"
+        }
+    ]
+}

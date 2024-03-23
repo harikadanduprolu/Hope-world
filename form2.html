@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funds Raised Form</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/form2.css') }}">
+</head>
+<body>
+
+<div id="formContainer">
+  <div id="raisedForForm">
+    <h2>Funds Raised For: <span id="selectedPurpose"></span></h2>
+    <div class="options-container">
+      <div class="option" onclick="openNextForm('Medical')">Medical</div>
+      <div class="option" onclick="openNextForm('Education')">Education</div>
+      <div class="option" onclick="openNextForm('Memorial')">Memorial</div>
+      <div class="option" onclick="openNextForm('Others')">Others</div>
+    </div>
+  </div>
+
+  <div id="nextForm" style="display:none;">
+    <h2>Enter Your Information</h2>
+   
+    <form id="nextFormSubmit" onsubmit="submitNextForm(event)">
+      <label for="newName">Name:</label><br>
+      <input type="text" id="newName" name="newName"><br>
+      <label for="newEmail">Email:</label><br>
+      <input type="email" id="newEmail" name="newEmail"><br>
+      <label for="newPhone">Phone Number:</label><br>
+      <input type="tel" id="newPhone" name="newPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number must be in XXX-XXX-XXXX format"><br>
+      <label for="amount">Amount:</label><br>
+      <input type="number" id="amount" name="amount" min="0"><br>
+      <input type="hidden" id="purpose" name="purpose">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+
+<script>
+
+function openNextForm(purpose) {
+  document.getElementById("purpose").value = purpose;
+  
+  document.getElementById("selectedPurpose").innerText = purpose;
+  
+  document.getElementById("raisedForForm").style.display = "none";
+  document.getElementById("nextForm").style.display = "block";
+}
+function submitNextForm(event) {
+  event.preventDefault(); 
+  
+  var newName = document.getElementById("newName").value;
+  var newEmail = document.getElementById("newEmail").value;
+  var newPhone = document.getElementById("newPhone").value;
+  var amount = document.getElementById("amount").value;
+  var purpose = document.getElementById("purpose").value;
+  
+  alert("Submitted data:\nName: " + newName + "\nEmail: " + newEmail + "\nPhone Number: " + newPhone + "\nAmount: " + amount + "\nPurpose: " + purpose);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/about.css') }}">
+    <link
+      rel="stylesheet"
+      href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <title>Responsive Landing Page in HTML CSS and JavaScript</title>
+  </head>
+  <body>
+    <header>
+        <form action="/home" method="post">
+            <input type="hidden" name="name" value="{{ name }}">
+        </form>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <img src="visuals/logo.png" alt="" />
+          </div>
+          <nav>
+            <div class="btn">
+              <i class="fa fa-times close-btn"></i>
+            </div>
+            <li><a href="/home2">Home</a></li>
+            <li><a href="#">Contact</a></li>
+          </nav>
+          <div class="btn">
+            <i class="fa fa-bars menu-btn"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <div class="content">
+          <h1>About Us...</h1>
+          <div>
+            <p>The motivation for this project stems from the need to enhance food distribution efficiency by analyzing consumption patterns, production capacities, and various factors affecting the supply chain. By identifying regions with surplus and deficit food supplies, the project aims to develop optimization models that consider export costs, distances, and sustainability factors. The goal is to provide actionable recommendations for improving food distribution systems, ensuring long-term sustainability, and addressing global food security challenges. Continuous monitoring and evaluation will allow for iterative refinement and optimization of distribution strategies to maximize resource utilization.
+            </p>
+              <button onclick="scrollToSection()">Read More...</button>
+            </div>
+            
+      </div>
+    </section><section class="team" id="scrollTarget">
+              <h1>Meet Our Team</h1>
+              <div class="team-cards">
+              
+                <!-- Cards here -->
+                <!-- Card 1 -->
+              
+                <div class="card card-1">
+                  <div class="card-info">
+                    <h2 class="card-name">Vedhasri</h2>
+                    <p class="card-role">Team member</p>
+                    <p class="card-email">vedhasrianumolu@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                  </div>
+                </div>
+          
+                <!-- Card 2 -->
+              
+                <div class="card card-2">
+                  <div class="card-info">
+                    <h2 class="card-name">Harika</h2>
+                    <p class="card-role">Team Lead</p>
+                    <p class="card-email">harikadandrupolu@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                  </div>
+                </div>
+              
+                <!-- Card 3 -->
+              
+                <div class="card card-3">
+                  <div class="card-info">
+                    <h2 class="card-name">Tanmayee</h2>
+                    <p class="card-role">Team member</p>
+                    <p class="card-email">tanmayeekyram@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                  </div>
+                </div>
+              </div>
+              
+            </section>
+    <script>
+    // Automatically submit the form when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('myForm').submit();
+    });
+      function scrollToSection() {
+    // Get the height of the viewport
+    var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    // Scroll to the bottom of the page with smooth behavior
+    window.scrollTo({
+      top: document.body.scrollHeight - viewportHeight,
+      behavior: 'smooth'
+    });
+  }
+    </script>
+  </body>
+</html>

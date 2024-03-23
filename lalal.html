@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/pop.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/card.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/card_do.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/profile.css') }}">
+
+    <title>main</title>
+</head>
+<body>
+    {% if flag==0 %}
+        <div class="nav">
+            <div class="logo">
+                <img src="../static/images/logo.png" width="200px">
+            </div>
+            <div class="links">
+    <div class="box">
+        <a class="a" href="#popup1">Home</a>
+        <a class="a" href="#popup1" >About Us</a>
+        <a class="a" href="#popup1">Donate</a>
+        <a class="a spl" href="#popup1"><button class="button-62" role="button">start a  new fundraiser</button></a>
+        <a class="a" href="/login">Login/Signup</a>
+    </div>
+</div>
+</div>
+
+<div id="popup1" class="overlay">
+	<div class="popup xyz">
+		<h2><div class="content">
+            <a class="a" href="/login"><button class="button-62" role="button">Login/Signup</button></a>
+        </div></h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			Please Login to continue
+		</div>
+	</div>
+</div>
+    {% endif %}
+    {% if flag>=1 %}
+    <div class="container">
+        <div class="nav">
+            <div class="logo">
+                <img src="../static/images/logo.png" width="150px">
+            </div>
+            <div class="links">
+                      <a class="a" href="{{ url_for('lalal', section='home') }}" >Home</a>
+                      <a class="a" href="{{ url_for('lalal', section='about') }}" >About Us</a>
+                      <a class="a" href="{{ url_for('lalal', section='Donate') }}">Donate</a>
+                      <a class="spl" href="/form1"><button class="button-62" role="button">start a  new fundraiser</button></a>
+                      {% if flag==0 %}
+                      <a class="a" href="/login">Login/Signup</a>
+                      {% endif %}
+                      {% if flag>=1 %}
+                      <a class="a" href="{{ url_for('lalal', section='profile') }}"><img src="../static/images/login.png" width="30px"  align="center"></a>
+
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+  <main>
+    
+{% if not selected_section %}
+<div class="content">
+    <div class="responsive-container-block Container bottomContainer">
+        <img class="mainImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/xpraup2.svg">
+        <div class="allText bottomText">
+          <p class="text-blk headingText">
+            Our Vision
+          </p>
+          <p class="text-blk subHeadingText">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <p class="text-blk description">
+            Our vision for crowdfunding is to democratize access to funding, enabling creators to bring their ideas to life with community support. We aim to foster innovation and drive positive societal change globally.
+          </p>
+          <div class="tan">
+            {% if flag>=1 %}
+            <button class="button-62" role="button">Donate</button>
+            {% endif %}
+            {% if flag==0 %}
+            <button class="button-62" role="button">
+                <a href="#popup1">Donate</a>
+                
+            </button>
+            {% endif %}
+            </div>
+        </div>
+      </div>
+    </div>
+   
+
+    <div class="story"></div>
+</div>
+
+{% endif %}
+       {% if selected_section == 'about' %}
+       <div class="responsive-container-block bigContainer">
+        <div class="responsive-container-block Container">
+          <img class="mainImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/eaboutus1.svg">
+          <div class="allText aboveText">
+            <p class="text-blk headingText">
+              Our Mission
+            </p>
+            <p class="text-blk subHeadingText">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <p class="text-blk description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum pulvinar ullamcorper suspendisse ac eget. Pellentesque tempus leo in ullamcorper quis vestibulum ligula elementum ut.
+            </p>
+            <button class="explore">
+              Explore
+            </button>
+          </div>
+        </div>
+        <div class="responsive-container-block Container bottomContainer">
+          <img class="mainImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/xpraup2.svg">
+          <div class="allText bottomText">
+            <p class="text-blk headingText">
+              Our Vision
+            </p>
+            <p class="text-blk subHeadingText">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <p class="text-blk description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum pulvinar ullamcorper suspendisse ac eget. Pellentesque tempus leo in ullamcorper quis vestibulum ligula elementum ut.
+            </p>
+            <button class="explore">
+              Explore
+            </button>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% if selected_section == 'home' %}
+    <div class="content">
+        <div class="responsive-container-block Container bottomContainer">
+            <img class="mainImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/xpraup2.svg">
+            <div class="allText bottomText">
+              <p class="text-blk headingText">
+                Our Vision
+              </p>
+              <p class="text-blk subHeadingText">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <p class="text-blk description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum pulvinar ullamcorper suspendisse ac eget. Pellentesque tempus leo in ullamcorper quis vestibulum ligula elementum ut.
+              </p>
+              <div class="tan">
+                {% if flag>=1 %}
+                <button class="button-62" role="button">Donate</button>
+                {% endif %}
+                {% if flag==0 %}
+                <button class="explore">
+                    <a href="#popup1">Donate</a>
+                    
+                </button>
+                {% endif %}
+                </div>
+            </div>
+          </div>
+        </div>
+       
+    
+        <div class="story"></div>
+    </div>
+    {% endif %}
+
+{% if selected_section=='Donate' %}
+<div class="donate">
+    <div class="card card1">
+        <div class="header">
+                                <span class="title">Donate By</span>
+                                <span class="price">Cause</span>
+                            </div>
+                            <p class="desc">Etiam ac convallis enim, eget euismod dolor.</p>
+                            <ul class="lists">
+                                <li class="list">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Help Online</span>
+                                </li>
+                                <li class="list">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Meet the people whom you help</span>
+                                </li>
+                                <li class="list">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>100% Transparency</span>
+                                </li>
+                            </ul>
+                            <form action="/home" method="POST" >
+                            <button type="button" class="action">Get Started</button>
+                            </form>
+                        </div>
+
+                        <div class="card card2">
+                            <div class="header">
+                                                    <span class="title">Donate By</span>
+                                                    <span class="price">Foundation</span>
+                                                </div>
+                                                <p class="desc">Etiam ac convallis enim, eget euismod dolor.</p>
+                                                <ul class="lists">
+                                                    <li class="list">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                                        </svg>
+                                                        <span>Aenean quis</span>
+                                                    </li>
+                                                    <li class="list">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                                        </svg>
+                                                        <span>Morbi semper</span>
+                                                    </li>
+                                                    <li class="list">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                                        </svg>
+                                                        <span>Tristique enim nec</span>
+                                                    </li>
+                                                </ul>
+                                                <form action="/found" method="POST" >
+                                                <button role="button" class="action">Get Started</button>
+                                            </form>
+                                            </div>
+</div>
+
+{% endif %}
+
+{% if selected_section=='fund' %}
+<div class="fund">
+    
+</div>
+{% endif %}
+
+{% if selected_section=='profile' %}
+<div class="profile">
+    <div class="container_p">
+        <h1 class="_p">User Profile</h1>
+        <div class="profile-info_p">
+          <div class="avatar_p">
+            <img src="https://www.technology-solved.com/wp-content/uploads/2011/02/computer-user-at-home-image.png" alt="Profile Picture">
+          </div>
+          <div>
+            <label>Name:</label>
+            <p>John Doe</p>
+            <label>Email:</label>
+            <p>johndoe@example.com</p>
+            <label>Phone:</label>
+            <p>+1234567890</p>
+          </div>
+        </div>
+        <div class="button-containe_p">
+          <button class="button-62" role="button" onclick="editProfile()">Edit profile</button>
+        </div>
+      </div>
+    <div class="container_p">
+    
+    
+      <div class="section_p">
+        <h2 class="_p2">My Withdraws</h2>
+        <div class="section-content_p withdraws_p">
+          <div class="transaction_p">
+            <p>Withdraw Amount: $50</p>
+            <p>Date: 2024-03-25</p>
+          </div>
+          <div class="transaction_p">
+            <p>Withdraw Amount: $100</p>
+            <p>Date: 2024-03-20</p>
+          </div>
+    
+        </div>
+      </div>
+    
+      <div class="section_p">
+        <h2 class="_p2">My Fundraisers</h2>
+        <div class="section-content fundraisers_p">
+          <div class="transaction_p">
+            <p>Fundraiser Name: Medical Expenses</p>
+            <p>Raised Amount: $500</p>
+            <p>Date: 2024-03-15</p>
+          </div>
+          <div class="transaction_p">
+            <p>Fundraiser Name: Education Fund</p>
+            <p>Raised Amount: $1000</p>
+            <p>Date: 2024-03-10</p>
+          </div>
+    
+        </div>
+      </div>
+    
+      
+    </div>
+    
+    <script>
+    function editProfile() {
+      window.location.href = "edit_profile.html"; 
+    }
+    </script>
+    
+</div>
+{% endif %}
+
+  </main>
+
+  <div class="footer text-center">
+    © HopeWorld Foundation | Privacy Policy | Terms of Service
+</div>
+</div>
+</body>
+    </html>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>  </body>
+</html>
